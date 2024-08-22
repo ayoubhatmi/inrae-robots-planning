@@ -46,7 +46,7 @@ const AddRobot = () => {
         <CardTitle className="text-3xl">Add a new Robot</CardTitle>
       </CardHeader>
       <CardContent>
-        <RobotForm onSubmit={onSubmit} />
+        <RobotForm />
       </CardContent>
     </Card>
   );

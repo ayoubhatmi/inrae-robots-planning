@@ -14,17 +14,11 @@ import {
   Waypoints,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "./ui/collapsible";
 
 const SideBar = () => {
   const generalItems = [
-    // { label: "Dashboard", href: "/", icon: LayoutDashboard },
-    { label: "Calendar", href: "/calendar", icon: Calendar },
-    { label: "Activities", href: "/activities", icon: Tractor },
+    { label: "Calendar", href: "/", icon: Calendar },
+    { label: "Cultural operations", href: "/activities", icon: Tractor },
   ];
   const itkItems = [
     { label: "ITK Planning", href: "/add-itk", icon: CalendarPlus },
@@ -37,9 +31,12 @@ const SideBar = () => {
   const fieldItems = [
     { label: "Plots", href: "/plots", icon: Map },
     { label: "Trajectories", href: "/trajectories", icon: Waypoints },
-    { label: "Reference trajectory", href: "/map", icon: Route },
+    {
+      label: "Reference trajectory",
+      href: "/reference-trajectory",
+      icon: Route,
+    },
   ];
-  const recources = [{ label: "Robot", href: "/robots", icon: Tractor }];
   const pathname = usePathname();
 
   return (
@@ -50,28 +47,6 @@ const SideBar = () => {
         </h3>
 
         <div className="mt-5 flex flex-col gap-1 w-full">
-          {/* <Collapsible>
-            <CollapsibleTrigger className="h-10 px-4 py-2 flex font-medium justify-between w-full hover:bg-secondary/80 rounded-md text-md">
-              <div className="flex gap-2 items-center">
-                <Tractor size={20} /> Recources
-              </div>
-              <ChevronDown />
-            </CollapsibleTrigger>
-            <CollapsibleContent>
-              {recources.map((item, index) => (
-                <Link key={index} href={item.href}>
-                  <SidebarButton
-                    variant={pathname === item.href ? "secondary" : "ghost"}
-                    className="pl-11"
-                  >
-                    {item.label}
-                  </SidebarButton>
-                </Link>
-              ))}
-            </CollapsibleContent>
-          </Collapsible> */}
-
-          {/* <h3 className="mx-3 font-semibold text-slate-900 my-2">General</h3> */}
           {generalItems.map((item, index) => (
             <Link key={index} href={item.href}>
               <SidebarButton

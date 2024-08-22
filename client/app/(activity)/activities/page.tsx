@@ -20,7 +20,7 @@ const activitiesPage = () => {
   return (
     <div className="w-full">
       <div className="flex pb-4 justify-between gap-4">
-        <h1 className="text-4xl font-semibold">Activities</h1>
+        <h1 className="text-4xl font-semibold">Cultural operations</h1>
         <Button asChild>
           <Link href="/add-activity">Add a new Activity</Link>
         </Button>

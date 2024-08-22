@@ -31,10 +31,10 @@ export const columns: ColumnDef<Task>[] = [
     accessorKey: "plot_name",
     header: "Plot",
   },
-  {
-    accessorKey: "trajectory_name",
-    header: "Trajectory",
-  },
+  // {
+  //   accessorKey: "trajectory_name",
+  //   header: "Trajectory",
+  // },
   {
     id: "actions",
     cell: ({ row }) => {
