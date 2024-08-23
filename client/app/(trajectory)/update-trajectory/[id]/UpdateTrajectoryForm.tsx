@@ -45,6 +45,8 @@ const UpdateTrajectoryForm = ({
   params,
   defaultValues,
 }: UpdateTrajectoryFormProps) => {
+  const { toast } = useToast();
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues,
@@ -64,12 +66,13 @@ const UpdateTrajectoryForm = ({
         }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Error: ${response.statusText}`);
-      }
+      if (response.ok) {
+        toast({ description: "Trajectroy updated successfully!" });
 
-      const data = await response.json();
-      console.log("Update successful", data);
+        router.push(`/trajectories/${params.id}`);
+      } else {
+        toast({ description: `Error: ${response.statusText}` });
+      }
     } catch (error) {
       console.error("Update failed", error);
     }

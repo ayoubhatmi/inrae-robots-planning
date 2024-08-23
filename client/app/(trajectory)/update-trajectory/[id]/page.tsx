@@ -31,8 +31,7 @@ const updateTrajectoryPage = ({ params }: updateTrajectoryPageProps) => {
     activity: activity,
     robot: robot,
   };
-  console.log(robot);
-  return (
+   return (
     <Card className="w-[26rem]">
       <CardHeader>
         <CardTitle className="text-3xl">Update Trajectory</CardTitle>
