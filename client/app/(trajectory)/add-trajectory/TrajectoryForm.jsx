@@ -89,7 +89,7 @@ function TrajectoryForm() {
     e.preventDefault();
 
     if (validateForm()) {
-      setIsLoading(true); 
+      setIsLoading(true);
       const formDataObj = new FormData();
       formDataObj.append("name", formData.name);
       formDataObj.append("file", formData.file);
@@ -112,7 +112,7 @@ function TrajectoryForm() {
           status: "error",
         });
       } finally {
-        setIsLoading(false); 
+        setIsLoading(false);
       }
     }
   };
@@ -155,7 +155,7 @@ function TrajectoryForm() {
               <SelectContent>
                 {robots && robots.length > 0
                   ? robots.map((option) => (
-                      <SelectItem key={option.id} value={option.id}>
+                      <SelectItem key={option.id} value={option.id.toString()}>
                         {option.name}
                       </SelectItem>
                     ))
@@ -186,7 +186,7 @@ function TrajectoryForm() {
               <SelectContent>
                 {activities && activities.length > 0
                   ? activities.map((option) => (
-                      <SelectItem key={option.id} value={option.id}>
+                      <SelectItem key={option.id} value={option.id.toString()}>
                         {option.name}
                       </SelectItem>
                     ))
